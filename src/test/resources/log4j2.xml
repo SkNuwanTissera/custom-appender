@@ -1,0 +1,10 @@
+<Configuration packages="org.example" status="WARN">
+    <Appenders>
+        <MapAppender name="MapAppender" />
+    </Appenders>
+    <Loggers>
+        <Root level="DEBUG">
+            <AppenderRef ref="MapAppender" />
+        </Root>
+    </Loggers>
+</Configuration>
