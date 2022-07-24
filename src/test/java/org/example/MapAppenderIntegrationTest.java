@@ -22,13 +22,12 @@ public class MapAppenderIntegrationTest {
 
     @Test
     public void whenLoggerEmitsLoggingEvent_thenAppenderReceivesEvent() {
-        logger.error("Error log message from {}", this.getClass()
-            .getSimpleName());
+        logger.error("Error : {} {} {}", "Hi", "from", this.getClass()
+            .getSimpleName(),"Nuwan");
         LoggerContext context = LoggerContext.getContext(false);
         Configuration config = context.getConfiguration();
         MapAppender appender = config.getAppender("MapAppender");
         assertEquals(appender.getEventMap()
             .size(), 1);
     }
-
 }
