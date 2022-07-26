@@ -17,7 +17,7 @@ public class MapAppenderIntegrationTest {
 
     @Before
     public void setup() {
-        logger = LogManager.getLogger(MapAppenderIntegrationTest.class);
+        logger = LogManager.getLogger("MapAppenderIntegrationTest.class");
     }
 
     @Test
@@ -26,7 +26,7 @@ public class MapAppenderIntegrationTest {
             .getSimpleName(),"Nuwan");
         LoggerContext context = LoggerContext.getContext(false);
         Configuration config = context.getConfiguration();
-        MapAppender appender = config.getAppender("MapAppender");
+        MapAppender appender = config.getAppender("MAP_APPENDER_V1");
         assertEquals(appender.getEventMap()
             .size(), 1);
     }

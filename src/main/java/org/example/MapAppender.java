@@ -40,7 +40,7 @@ public class MapAppender extends AbstractAppender {
             error("Unable to log less than WARN level.");
             return;
         }
-
+        eventMap.put(Instant.now().toString(), event);
         System.out.println(event.getMessage());
         System.out.println("##########");
 
@@ -54,8 +54,7 @@ public class MapAppender extends AbstractAppender {
             java.util.logging.Logger.getLogger(this.getClass().getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         System.out.println(jsonInString);
-        eventMap.put(Instant.now()
-            .toString(), event);
+
     }
 
     public ConcurrentMap<String, LogEvent> getEventMap() {
